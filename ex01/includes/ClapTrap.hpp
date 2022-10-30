@@ -28,14 +28,14 @@
 
 class ClapTrap
 {
-	private :
+	protected :
 		std::string		name_;
 		unsigned int	hitPoints_;
 		unsigned int	energyPoints_;
 		unsigned int	attackDamage_;
 	public:
 		ClapTrap();
-		ClapTrap(std::string name);
+		ClapTrap(std::string name, unsigned int hitPoints_, unsigned int energyPoints_, unsigned int attackDamage_);
 		ClapTrap(const ClapTrap& ori);
 		~ClapTrap();
 

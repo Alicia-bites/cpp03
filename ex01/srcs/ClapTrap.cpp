@@ -11,10 +11,10 @@ ClapTrap::ClapTrap()
 }
 
 // constructor
-ClapTrap::ClapTrap(std::string name)
-: hitPoints_(10)
-, energyPoints_(10)
-, attackDamage_(0)
+ClapTrap::ClapTrap(std::string name, unsigned int hitPoints_, unsigned int energyPoints_, unsigned int attackDamage_)
+: hitPoints_(hitPoints)
+, energyPoints_(energyPoints)
+, attackDamage_(attackDamage)
 {
 	std::cout << SKYBLUE2 << "constructor called" << RESET << std::endl;
 	if (name == "")
