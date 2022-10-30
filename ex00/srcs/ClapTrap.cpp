@@ -2,18 +2,28 @@
 
 // default constructor
 ClapTrap::ClapTrap()
+: name_("unamed")
+, hitPoints_(10)
+, energyPoints_(10)
+, attackDamage_(0)
 {
 	std::cout << SKYBLUE1 << "default constructor called" << RESET << std::endl;
 }
 
 // constructor
 ClapTrap::ClapTrap(std::string name)
-: name_(name)
-, hitPoints_(10)
+: hitPoints_(10)
 , energyPoints_(10)
 , attackDamage_(0)
 {
 	std::cout << SKYBLUE2 << "constructor called" << RESET << std::endl;
+	if (name == "")
+	{
+		std::cerr << "Name can't be an empty string. I'll choose the name... Benny." << std::endl;
+		name_ = "Benny";
+	}
+	else
+		name = name_;
 }
 
 // copy constructor
@@ -40,31 +50,51 @@ ClapTrap &ClapTrap::operator=(const ClapTrap& rhs)
 	return *this;
 }
 
-// FUNCTIONS -------------------------------------------------------------------------
+// << overload
+std::ostream &operator<<(std::ostream& o, ClapTrap& rhs)
+{
+	o << STEELBLUE1
+		<< "Printing operator overload called ---->"
+		<< RESET
+		<< std::endl
+		<< " Name = " << rhs.getName()
+		<< std::endl
+		<< " Hit points or health = "
+		<< rhs.getHitPoints()
+		<< std::endl
+		<< " Energy points = "
+		<< rhs.getEnergyPoints()
+		<< std::endl
+		<< " Attack damage = "
+		<< rhs.getAttackDamage()
+		<< std::endl;
+	return o;
+}
+
+// ACTION FUNCTIONS -------------------------------------------------------------------------
 
 void	ClapTrap::attack(const std::string& target)
 {
-	if (energyPoints_ >= 3)
+	std::cout << STEELBLUE4 << "Trying to attack..." << RESET << std::endl;
+	if (energyPoints_ >= 1)
 	{
 		std::cout << SLATEBLUE1
+			<< "SUCCESS!"
+			<< std::endl
 			<< name_ 
 			<< " attacks " 
 			<< target 
-			<< " causing " 
+			<< " causing "
+			<< DEEPPINK1
 			<< attackDamage_
-			<< " of damage!"
+			<< SLATEBLUE1
+			<< " points of damage!"
 			<< RESET
 			<< std::endl;
-		energyPoints_ -= 3;
+		energyPoints_ -= 1;
 	}
 	else
-		displayMsg(NO_ENERGY);
-}
-
-void	displayMsg(int msg)
-{
-	if (msg == NO_ENERGY)
-		std::cout << "Not enough energy points!" << std::endl;
+		std::cout << ORANGERED1 << "FAILURE! Not enough energy points!" << RESET << std::endl;
 }
 
 void	ClapTrap::takeDamage(unsigned int amount)
@@ -72,24 +102,63 @@ void	ClapTrap::takeDamage(unsigned int amount)
 	std::cout << SLATEBLUE2
 		<< name_
 		<< " takes "
+		<< DEEPPINK1
 		<< amount
-		<< "damages"
+		<< SLATEBLUE2
+		<< " points of damage!"
 		<< RESET
 		<< std::endl;
-	if ((hitPoints_ - amount) > 0)
+	if (amount < hitPoints_)
 		hitPoints_ -= amount;
 	else
-		std::cout << name_ << "is dead." << std::endl;
+	{
+		hitPoints_ = 0;
+		std::cout << SPRINGGREEN1 << name_ << " is dead." << RESET << std::endl;
+	}
 }
 
-void	ClapTrap::beRepaired(unsigned int amount) const
+void	ClapTrap::beRepaired(unsigned int amount)
 {
-	std::cout << SLATEBLUE3
-		<< name_;
-		<< " regain "
-		<< amount
-		<< " hitPoints!"
-		<< RESET
-		<< std::endl;
-	hitPoints_ += amount;
+	std::cout << STEELBLUE4 << "Trying to repair..." << RESET << std::endl;
+	if (energyPoints_ >= 1)
+	{
+		std::cout << SLATEBLUE3
+			<< "SUCCESS!"
+			<< std::endl
+			<< name_
+			<< " regain "
+			<< DEEPPINK1
+			<< amount
+			<< SLATEBLUE3
+			<< " hitPoints!"
+			<< RESET
+			<< std::endl;
+		energyPoints_ -= 1;
+		if (hitPoints_ == 0)
+			std::cout << SPRINGGREEN1 << name_ << " is back to life!" << std::endl;
+		hitPoints_ += amount;
+	}
+	else
+		std::cout << ORANGERED1 << "FAILURE! Not enough energy points!" << RESET << std::endl;
+}
+
+// - GETTERS -------------------------------------------------
+std::string	&ClapTrap::getName()  
+{
+	return name_;
+}
+
+unsigned int	ClapTrap::getHitPoints() const
+{
+	return hitPoints_;
+}
+
+unsigned int	ClapTrap::getEnergyPoints() const
+{
+	return energyPoints_;
+}
+
+unsigned int	ClapTrap::getAttackDamage() const
+{
+	return attackDamage_;
 }

@@ -19,6 +19,8 @@
 # define STEELBLUE2 "\033[38;5;75m"
 # define STEELBLUE3 "\033[38;5;81m"
 # define STEELBLUE4 "\033[38;5;68m"
+# define ORANGERED1 "\033[38;5;202m"
+# define DEEPPINK1 "\033[38;5;198m"
 # define RESET "\033[0m"
 
 # define NO_ENERGY -42
@@ -37,14 +39,24 @@ class ClapTrap
 		ClapTrap(const ClapTrap& ori);
 		~ClapTrap();
 
-		ClapTrap	&operator=(const ClapTrap& rhs);
+		ClapTrap		&operator=(const ClapTrap& rhs);
 
-		void		attack(const std::string& target);
-		void		takeDamage(unsigned int amount);
-		void		beRepaired(unsigned int amount) const;
+		void			attack(const std::string& target);
+		void			takeDamage(unsigned int amount);
+		void			beRepaired(unsigned int amount);
+		
+		void			setName(std::string& name);
+
+		std::string		&getName(); 
+		unsigned int	getHitPoints() const; 
+		unsigned int	getEnergyPoints() const; 
+		unsigned int	getAttackDamage() const; 
+
 
 };
 
 void	displayMsg(int msg);
+std::ostream &operator<<(std::ostream& o, ClapTrap& rhs);
+
 
 #endif
