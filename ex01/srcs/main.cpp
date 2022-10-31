@@ -1,4 +1,6 @@
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
+
 
 int	main()
 {
@@ -6,15 +8,14 @@ int	main()
 	std::cout << a << std::endl;
 	std::cout << std::endl;
 
-
-	ClapTrap	b("");
+	ScavTrap	b("Alicia");
 	std::cout << b << std::endl;
 	std::cout << "---------------------------------------" << std::endl;
 	b.takeDamage(3);
 	std::cout << b << std::endl;
 	std::cout << "---------------------------------------" << std::endl;
 
-	b.takeDamage(20);
+	b.takeDamage(100);
 	std::cout << b << std::endl;
 	std::cout << "---------------------------------------" << std::endl;
 
@@ -22,31 +23,61 @@ int	main()
 	std::cout << b << std::endl;
 	std::cout << "---------------------------------------" << std::endl;
 
-	b.attack("Olga");
+	b.attack("Rory");
 	std::cout << b << std::endl;
 	std::cout << "---------------------------------------" << std::endl;
 
-	b.attack("Olga");
+	b.beRepaired(100);
 	std::cout << b << std::endl;
 	std::cout << "---------------------------------------" << std::endl;
-
-	b.beRepaired(6);
-	std::cout << b << std::endl;
-	std::cout << "---------------------------------------" << std::endl;
-	
-	b.attack("Olga");
-	std::cout << b << std::endl;
-	std::cout << "---------------------------------------" << std::endl;
-	b.attack("Olga");
-	b.attack("Olga");
-	b.attack("Olga");
-	b.attack("Olga");
-	std::cout << b << std::endl;
-	std::cout << "---------------------------------------" << std::endl;
-	b.attack("Olga");
-	std::cout << b << std::endl;
-	std::cout << "---------------------------------------" << std::endl;
-	b.attack("Olga");
-	b.beRepaired(2);
+	// b.attack("Rory");
+	// b.attack("Rory");
+	// b.attack("Rory");
+	// b.attack("Rory");
+	// b.attack("Rory");
+	// b.attack("Rory");
+	// b.attack("Rory");
+	// b.attack("Rory");
+	// b.attack("Rory");
+	// b.attack("Rory");
+	// b.attack("Rory");
+	// b.attack("Rory");
+	// b.attack("Rory");
+	// b.attack("Rory");
+	// b.attack("Rory");
+	// b.attack("Rory");
+	// b.attack("Rory");
+	// b.attack("Rory");
+	// b.attack("Rory");
+	// b.attack("Rory");
+	// b.attack("Rory");
+	// b.attack("Rory");
+	// b.attack("Rory");
+	// b.attack("Rory");
+	// b.attack("Rory");
+	// b.attack("Rory");
+	// b.attack("Rory");
+	// b.attack("Rory");
+	// b.attack("Rory");
+	// b.attack("Rory");
+	// b.attack("Rory");
+	// b.attack("Rory");
+	// b.attack("Rory");
+	// b.attack("Rory");
+	// b.attack("Rory");
+	// b.attack("Rory");
+	// b.attack("Rory");
+	// b.attack("Rory");
+	// b.attack("Rory");
+	// b.attack("Rory");
+	// b.attack("Rory");
+	// b.attack("Rory");
+	// b.attack("Rory");
+	// b.attack("Rory");
+	// b.attack("Rory");
+	// b.attack("Rory");
+	// b.attack("Rory");
+	// b.attack("Rory");
+	// b.beRepaired(3);
 	return 0;
 }

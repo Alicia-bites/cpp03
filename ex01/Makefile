@@ -16,6 +16,7 @@ RM				:=	rm -rf
 
 SRCS			:=	main.cpp \
 					ClapTrap.cpp \
+					ScavTrap.cpp \
 
 OBJS			:=	$(addprefix $(OPATH)/, $(SRCS:.cpp=.o))
 DEPS			:=	$(OBJS:.o=.d)

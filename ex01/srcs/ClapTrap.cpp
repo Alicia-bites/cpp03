@@ -11,12 +11,12 @@ ClapTrap::ClapTrap()
 }
 
 // constructor
-ClapTrap::ClapTrap(std::string name, unsigned int hitPoints_, unsigned int energyPoints_, unsigned int attackDamage_)
+ClapTrap::ClapTrap(std::string name, unsigned int hitPoints, unsigned int energyPoints, unsigned int attackDamage)
 : hitPoints_(hitPoints)
 , energyPoints_(energyPoints)
 , attackDamage_(attackDamage)
 {
-	std::cout << SKYBLUE2 << "constructor called" << RESET << std::endl;
+	std::cout << SKYBLUE2 << "second constructor called" << RESET << std::endl;
 	if (name == "")
 	{
 		std::cerr << "Name can't be an empty string. I'll choose the name... Benny." << std::endl;
@@ -26,12 +26,19 @@ ClapTrap::ClapTrap(std::string name, unsigned int hitPoints_, unsigned int energ
 		name = name_;
 }
 
+// other constructor
+ClapTrap::ClapTrap(std::string name)
+: name_(name)
+, hitPoints_(10)
+, energyPoints_(10)
+, attackDamage_(0)
+{}
+
 // copy constructor
 ClapTrap::ClapTrap(const ClapTrap& ori)
-: name_(ori.name_)
 {
 	std::cout << SKYBLUE3 << "copy constructor called" << RESET << std::endl;
-
+	*this = ori;
 }
 
 // destructor
@@ -53,21 +60,7 @@ ClapTrap &ClapTrap::operator=(const ClapTrap& rhs)
 // << overload
 std::ostream &operator<<(std::ostream& o, ClapTrap& rhs)
 {
-	o << STEELBLUE1
-		<< "Printing operator overload called ---->"
-		<< RESET
-		<< std::endl
-		<< " Name = " << rhs.getName()
-		<< std::endl
-		<< " Hit points or health = "
-		<< rhs.getHitPoints()
-		<< std::endl
-		<< " Energy points = "
-		<< rhs.getEnergyPoints()
-		<< std::endl
-		<< " Attack damage = "
-		<< rhs.getAttackDamage()
-		<< std::endl;
+	rhs.printAttributes(o);
 	return o;
 }
 
@@ -161,4 +154,23 @@ unsigned int	ClapTrap::getEnergyPoints() const
 unsigned int	ClapTrap::getAttackDamage() const
 {
 	return attackDamage_;
+}
+
+void	ClapTrap::printAttributes(std::ostream& o) const
+{
+	o << STEELBLUE1
+		<< "Printing operator overload called ---->"
+		<< RESET
+		<< std::endl
+		<< " Name = " << name_
+		<< std::endl
+		<< " Hit points or health = "
+		<< hitPoints_
+		<< std::endl
+		<< " Energy points = "
+		<< energyPoints_
+		<< std::endl
+		<< " Attack damage = "
+		<< attackDamage_
+		<< std::endl;
 }

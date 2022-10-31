@@ -3,6 +3,7 @@
 
 #include <iostream>
 
+
 # define SKYBLUE1 "\033[38;5;117m"
 # define SKYBLUE2 "\033[38;5;111m"
 # define SKYBLUE3 "\033[38;5;74m"
@@ -35,6 +36,7 @@ class ClapTrap
 		unsigned int	attackDamage_;
 	public:
 		ClapTrap();
+		ClapTrap(std::string name);
 		ClapTrap(std::string name, unsigned int hitPoints_, unsigned int energyPoints_, unsigned int attackDamage_);
 		ClapTrap(const ClapTrap& ori);
 		~ClapTrap();
@@ -52,6 +54,7 @@ class ClapTrap
 		unsigned int	getEnergyPoints() const; 
 		unsigned int	getAttackDamage() const; 
 
+		void			printAttributes(std::ostream& o) const;
 
 };
 
