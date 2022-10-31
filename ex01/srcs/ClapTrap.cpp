@@ -16,7 +16,7 @@ ClapTrap::ClapTrap(std::string name, unsigned int hitPoints, unsigned int energy
 , energyPoints_(energyPoints)
 , attackDamage_(attackDamage)
 {
-	std::cout << SKYBLUE2 << "second constructor called" << RESET << std::endl;
+	std::cout << SKYBLUE1 << "second constructor called" << RESET << std::endl;
 	if (name == "")
 	{
 		std::cerr << "Name can't be an empty string. I'll choose the name... Benny." << std::endl;
@@ -37,14 +37,14 @@ ClapTrap::ClapTrap(std::string name)
 // copy constructor
 ClapTrap::ClapTrap(const ClapTrap& ori)
 {
-	std::cout << SKYBLUE3 << "copy constructor called" << RESET << std::endl;
+	std::cout << SKYBLUE1 << "copy constructor called" << RESET << std::endl;
 	*this = ori;
 }
 
 // destructor
 ClapTrap::~ClapTrap()
 {
-	std::cout << SPRINGGREEN6 << "destructor called" << RESET << std::endl;
+	std::cout << SKYBLUE1 << "destructor called" << RESET << std::endl;
 }
 
 // copy assignement operator

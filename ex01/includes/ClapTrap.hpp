@@ -22,6 +22,7 @@
 # define STEELBLUE4 "\033[38;5;68m"
 # define ORANGERED1 "\033[38;5;202m"
 # define DEEPPINK1 "\033[38;5;198m"
+# define DARKOLIVEGREEN3 "\033[38;5;155m"
 # define RESET "\033[0m"
 
 # define NO_ENERGY -42

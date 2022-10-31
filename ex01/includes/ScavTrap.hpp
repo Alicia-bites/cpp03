@@ -6,6 +6,7 @@
 class ScavTrap : public ClapTrap
 {
 	private :
+		int	gateKeepin_;
 
 	public :
 		ScavTrap();
@@ -15,8 +16,7 @@ class ScavTrap : public ClapTrap
 		~ScavTrap();
 
 		void	guardGate();
-		// void 	attack(std::string const& target);
-
+		int		getGate() const; 	
 };
 
 std::ostream&	operator<<(std::ostream& o, ScavTrap const& rhs);
