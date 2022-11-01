@@ -3,16 +3,8 @@
 
 int	main()
 {
-	ClapTrap	rory("Rory");
-	ScavTrap	benny("Benny");
-	FragTrap	a;
 	DiamondTrap	alicia("Alicia");
-
-	std::cout << a << std::endl;
-	std::cout << rory << std::endl;
-	std::cout << benny << std::endl;
 	std::cout << alicia << std::endl;
-
 	std::cout << "Testing whoAmI function : " << std::endl;
 	alicia.whoAmI();
 	std::cout << std::endl;

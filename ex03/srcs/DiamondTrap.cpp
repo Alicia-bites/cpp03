@@ -1,7 +1,7 @@
 #include "DiamondTrap.hpp"
 
 DiamondTrap::DiamondTrap()
-: ClapTrap("_clap_name_", 100, 50, 30), FragTrap(), ScavTrap()
+: ClapTrap("unamed_clap_name_", 100, 50, 30), FragTrap(), ScavTrap()
 {
 	std::cout << DEEPPINK1 << "calling DiamondTrap constructor" << RESET << std::endl;
 	name_ = "unamed";

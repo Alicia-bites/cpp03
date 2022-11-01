@@ -24,15 +24,24 @@ ClapTrap::ClapTrap(std::string name, unsigned int hitPoints, unsigned int energy
 	}
 	else
 		name = name_;
+	std::cout << "YOOOOO" << name_ << std::endl;
 }
 
 // other constructor
 ClapTrap::ClapTrap(std::string name)
-: name_(name)
-, hitPoints_(10)
+: hitPoints_(10)
 , energyPoints_(10)
 , attackDamage_(0)
-{}
+{
+	std::cout << SKYBLUE1 << "constructor called" << RESET << std::endl;
+	if (name == "")
+	{
+		std::cerr << "Name can't be an empty string. I'll choose the name... Benny." << std::endl;
+		name_ = "Benny";
+	}
+	else
+		name = name_;
+}
 
 // copy constructor
 ClapTrap::ClapTrap(const ClapTrap& ori)
