@@ -51,10 +51,10 @@ class ClapTrap
 		
 		void			setName(std::string& name);
 
-		std::string		&getName(); 
-		unsigned int	getHitPoints() const; 
-		unsigned int	getEnergyPoints() const; 
-		unsigned int	getAttackDamage() const; 
+		const std::string		&getName() const; 
+		unsigned int			getHitPoints() const; 
+		unsigned int			getEnergyPoints() const; 
+		unsigned int			getAttackDamage() const; 
 
 		void			printAttributes(std::ostream& o) const;
 

@@ -8,7 +8,7 @@ int	main()
 	std::cout << a << std::endl;
 	std::cout << std::endl;
 
-		ScavTrap	b("Alicia");
+	ScavTrap	b("Alicia");
 	ScavTrap	c;
 	std::cout << INDIANRED1
 		<< "Testing copy assignement operator..."
@@ -18,7 +18,6 @@ int	main()
 	std::cout << std::endl;
 	std::cout << std::endl;
 
-	ScavTrap	b("Alicia");
 	std::cout << b << std::endl;
 	std::cout << "---------------------------------------" << std::endl;
 	b.takeDamage(3);
@@ -43,54 +42,8 @@ int	main()
 
 	b.guardGate();
 	b.guardGate();
-
-	b.attack("Rory");
-	b.attack("Rory");
-	b.attack("Rory");
-	b.attack("Rory");
-	b.attack("Rory");
-	b.attack("Rory");
-	b.attack("Rory");
-	b.attack("Rory");
-	b.attack("Rory");
-	b.attack("Rory");
-	b.attack("Rory");
-	b.attack("Rory");
-	b.attack("Rory");
-	b.attack("Rory");
-	b.attack("Rory");
-	b.attack("Rory");
-	b.attack("Rory");
-	b.attack("Rory");
-	b.attack("Rory");
-	b.attack("Rory");
-	b.attack("Rory");
-	b.attack("Rory");
-	b.attack("Rory");
-	b.attack("Rory");
-	b.attack("Rory");
-	b.attack("Rory");
-	b.attack("Rory");
-	b.attack("Rory");
-	b.attack("Rory");
-	b.attack("Rory");
-	b.attack("Rory");
-	b.attack("Rory");
-	b.attack("Rory");
-	b.attack("Rory");
-	b.attack("Rory");
-	b.attack("Rory");
-	b.attack("Rory");
-	b.attack("Rory");
-	b.attack("Rory");
-	b.attack("Rory");
-	b.attack("Rory");
-	b.attack("Rory");
-	b.attack("Rory");
-	b.attack("Rory");
-	b.attack("Rory");
-	b.attack("Rory");
-	b.attack("Rory");
+	while (b.getEnergyPoints() > 0)
+		b.attack("Rory");
 	b.attack("Rory");
 	b.beRepaired(3);
 	b.guardGate();

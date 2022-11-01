@@ -16,7 +16,8 @@ class ScavTrap : public ClapTrap
 		~ScavTrap();
 
 		void	guardGate();
-		int		getGate() const; 	
+		int		getGate() const;
+		void	attack(const std::string& target);
 };
 
 std::ostream&	operator<<(std::ostream& o, ScavTrap const& rhs);

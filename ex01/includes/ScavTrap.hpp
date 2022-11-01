@@ -12,11 +12,12 @@ class ScavTrap : public ClapTrap
 		ScavTrap();
 		ScavTrap(std::string name);
 		ScavTrap(const ScavTrap& ori);
-		// ScavTrap& operator=(const ScavTrap& rhs);
+		ScavTrap& operator=(const ScavTrap& rhs);
 		~ScavTrap();
 
 		void	guardGate();
-		int		getGate() const; 	
+		int		getGate() const;
+		void	attack(const std::string& target);
 };
 
 std::ostream&	operator<<(std::ostream& o, ScavTrap const& rhs);

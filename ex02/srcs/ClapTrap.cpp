@@ -47,8 +47,6 @@ ClapTrap::~ClapTrap()
 	std::cout << SKYBLUE1 << "destructor called" << RESET << std::endl;
 }
 
-// OPERATOR OVERLOADS ------------------------------------------
-
 // copy assignement operator
 ClapTrap &ClapTrap::operator=(const ClapTrap& rhs)
 {
@@ -69,7 +67,28 @@ std::ostream &operator<<(std::ostream& o, ClapTrap& rhs)
 	return o;
 }
 
-// ACTION FUNCTIONS -------------------------------------------------------------------------
+// MEMBER FUNCTIONS -------------------------------------------------------
+
+void	ClapTrap::printAttributes(std::ostream& o) const
+{
+	o << STEELBLUE1
+		<< "Printing operator overload called ---->"
+		<< RESET
+		<< std::endl
+		<< " Name = " << name_
+		<< std::endl
+		<< " Hit points or health = "
+		<< hitPoints_
+		<< std::endl
+		<< " Energy points = "
+		<< energyPoints_
+		<< std::endl
+		<< " Attack damage = "
+		<< attackDamage_
+		<< std::endl;
+}
+
+// - ACTION FUNCTIONS -----------------------------------------------------
 
 void	ClapTrap::attack(const std::string& target)
 {
@@ -123,6 +142,7 @@ void	ClapTrap::beRepaired(unsigned int amount)
 		std::cout << SLATEBLUE3
 			<< "SUCCESS!"
 			<< std::endl
+			<< "ClapTrap "
 			<< name_
 			<< " regain "
 			<< DEEPPINK1
@@ -140,8 +160,10 @@ void	ClapTrap::beRepaired(unsigned int amount)
 		std::cout << ORANGERED1 << "FAILURE! Not enough energy points!" << RESET << std::endl;
 }
 
+
+
 // - GETTERS -------------------------------------------------
-std::string	&ClapTrap::getName()  
+const std::string	&ClapTrap::getName() const
 {
 	return name_;
 }
@@ -159,23 +181,4 @@ unsigned int	ClapTrap::getEnergyPoints() const
 unsigned int	ClapTrap::getAttackDamage() const
 {
 	return attackDamage_;
-}
-
-void	ClapTrap::printAttributes(std::ostream& o) const
-{
-	o << STEELBLUE1
-		<< "Printing operator overload called ---->"
-		<< RESET
-		<< std::endl
-		<< " Name = " << name_
-		<< std::endl
-		<< " Hit points or health = "
-		<< hitPoints_
-		<< std::endl
-		<< " Energy points = "
-		<< energyPoints_
-		<< std::endl
-		<< " Attack damage = "
-		<< attackDamage_
-		<< std::endl;
 }

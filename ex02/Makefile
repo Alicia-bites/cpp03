@@ -1,6 +1,6 @@
 # project settings
-NAME 			:=	ClapTrap
-NAME_AR			:=	ClapTrap.a
+NAME 			:=	FragTrap
+NAME_AR			:=	FragTrap.a
 C++				:=	c++
 CXXFLAGS		:=	-MMD -Wall -Wextra -Werror -std=c++98
 CXXFLAGSADD		:=	-g3

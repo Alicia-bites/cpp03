@@ -25,34 +25,5 @@ int	main()
 	d.beRepaired(3);
 	d.attack("Ernest");
 	
-	// std::cout << b << std::endl;
-	// std::cout << "---------------------------------------" << std::endl;
-	// b.takeDamage(3);
-	// std::cout << b << std::endl;
-	// std::cout << "---------------------------------------" << std::endl;
-
-	// b.takeDamage(100);
-	// std::cout << b << std::endl;
-	// std::cout << "---------------------------------------" << std::endl;
-
-	// b.beRepaired(3);
-	// std::cout << b << std::endl;
-	// std::cout << "---------------------------------------" << std::endl;
-
-	// b.attack("Rory");
-	// std::cout << b << std::endl;
-	// std::cout << "---------------------------------------" << std::endl;
-
-	// b.beRepaired(100);
-	// std::cout << b << std::endl;
-	// std::cout << "---------------------------------------" << std::endl;
-
-	// b.guardGate();
-	// b.guardGate();
-	
-	// for (int n = 0; n < 48; n++)
-	// 	b.attack("Rory");
-	// b.beRepaired(3);
-	// b.guardGate();
-	// return 0;
+	return 0;
 }

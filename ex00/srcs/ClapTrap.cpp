@@ -84,6 +84,7 @@ void	ClapTrap::attack(const std::string& target)
 		std::cout << SLATEBLUE1
 			<< "SUCCESS!"
 			<< std::endl
+			<< "ClapTrap "
 			<< name_ 
 			<< " attacks " 
 			<< target 
