@@ -1,8 +1,8 @@
 # include "ScavTrap.hpp"
 
 // default constructor
-ScavTrap::ScavTrap() :
-	ClapTrap("unamed", 100, 50, 20)
+ScavTrap::ScavTrap()
+: ClapTrap("unamed", 100, 50, 20)
 {
 	this->name_ = "unamed";
 	this->hitPoints_ = 100;
@@ -13,8 +13,8 @@ ScavTrap::ScavTrap() :
 }
 
 // constructor
-ScavTrap::ScavTrap(std::string name) :
-	ClapTrap(name, 100, 50, 20)
+ScavTrap::ScavTrap(std::string name)
+: ClapTrap(name, 100, 50, 20)
 {
 	this->name_ = name;
 	this->hitPoints_ = 100;
@@ -31,8 +31,8 @@ ScavTrap::~ScavTrap()
 }
 
 // copy constructor
-ScavTrap::ScavTrap(ScavTrap const& ori) :
-	ClapTrap(ori)
+ScavTrap::ScavTrap(ScavTrap const& ori)
+: ClapTrap(ori)
 {
 	std::cout << SPRINGGREEN2 << "calling ScavTRap copy constructor" << RESET << std::endl;
 	ClapTrap::operator=(ori);

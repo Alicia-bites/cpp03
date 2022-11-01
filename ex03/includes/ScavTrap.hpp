@@ -1,9 +1,9 @@
 #ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
+# define SCAPTRAP_HPP
 
 #include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap
+class ScavTrap : public virtual ClapTrap
 {
 	private :
 		int	gateKeepin_;
