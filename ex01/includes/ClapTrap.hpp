@@ -23,6 +23,7 @@
 # define ORANGERED1 "\033[38;5;202m"
 # define DEEPPINK1 "\033[38;5;198m"
 # define DARKOLIVEGREEN3 "\033[38;5;155m"
+# define INDIANRED1 "\033[38;5;131m"
 # define RESET "\033[0m"
 
 # define NO_ENERGY -42

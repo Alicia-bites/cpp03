@@ -8,6 +8,16 @@ int	main()
 	std::cout << a << std::endl;
 	std::cout << std::endl;
 
+		ScavTrap	b("Alicia");
+	ScavTrap	c;
+	std::cout << INDIANRED1
+		<< "Testing copy assignement operator..."
+		<< RESET << std::endl;
+	c = b;
+	std::cout << c << std::endl;
+	std::cout << std::endl;
+	std::cout << std::endl;
+
 	ScavTrap	b("Alicia");
 	std::cout << b << std::endl;
 	std::cout << "---------------------------------------" << std::endl;

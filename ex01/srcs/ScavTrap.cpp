@@ -35,14 +35,26 @@ ScavTrap::ScavTrap(ScavTrap const& ori) :
 	ClapTrap(ori)
 {
 	std::cout << SPRINGGREEN2 << "calling ScavTRap copy constructor" << RESET << std::endl;
-	operator=(ori);
+	ClapTrap::operator=(ori);
 	this->gateKeepin_ = ori.gateKeepin_;
+}
+
+// OPERATOR OVERLOADS ------------------------------------------
+
+ScavTrap& ScavTrap::operator=(const ScavTrap& rhs)
+{
+	if (this != &rhs)
+	{
+		ClapTrap::operator=(rhs);
+		this->gateKeepin_ = rhs.gateKeepin_;
+	}
+	return *this;
 }
 
 std::ostream&	operator<<(std::ostream& o, ScavTrap const& rhs)
 {
 	rhs.printAttributes(o);
-	o << rhs.getGate();
+	o << " Is guarding the gate? 1 for yes, 0 for no --> " << rhs.getGate();
 	return (o);
 }
 
