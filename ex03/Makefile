@@ -3,7 +3,7 @@ NAME 			:=	Diamond
 NAME_AR			:=	Diamond.a
 C++				:=	c++
 CXXFLAGS		:=	-MMD -Wall -Wextra -Werror -std=c++98
-CXXFLAGSADD		:=	-g3
+# CXXFLAGSADD		:=	-g3
 
 VALGRIND		:=	valgrind -s --leak-check=full --show-leak-kinds=all --track-origins=yes --track-fds=yes
 
