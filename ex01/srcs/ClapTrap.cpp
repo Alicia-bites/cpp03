@@ -50,11 +50,15 @@ ClapTrap::~ClapTrap()
 // copy assignement operator
 ClapTrap &ClapTrap::operator=(const ClapTrap& rhs)
 {
-	this->name_ = rhs.name_;
-	this->hitPoints_ = rhs.hitPoints_;
-	this->energyPoints_ = rhs.energyPoints_;
-	this->attackDamage_ = rhs.attackDamage_;
+	if (this != &rhs)
+	{
+		this->name_ = rhs.name_;
+		this->hitPoints_ = rhs.hitPoints_;
+		this->energyPoints_ = rhs.energyPoints_;
+		this->attackDamage_ = rhs.attackDamage_;
+	}
 	return *this;
+}
 }
 
 // << overload
