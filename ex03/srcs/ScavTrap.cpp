@@ -6,8 +6,8 @@ ScavTrap::ScavTrap() :
 {
 	this->name_ = "unamed";
 	this->hitPoints_ = 100;
-	this->attackDamage_ = 50;
-	this->energyPoints_ = 20;
+	this->energyPoints_ = 50;
+	this->attackDamage_ = 20;
 	this->gateKeepin_ = 0;
 	std::cout << SPRINGGREEN2 << "calling ScavTrap constructor" << RESET << std::endl;
 }
