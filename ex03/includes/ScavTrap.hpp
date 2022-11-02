@@ -5,7 +5,7 @@
 
 class ScavTrap : public virtual ClapTrap
 {
-	private :
+	protected :
 		int	gateKeepin_;
 
 	public :

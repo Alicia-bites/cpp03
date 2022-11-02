@@ -40,16 +40,16 @@ int	main()
 	std::cout << "------------------------------------------------------" << std::endl;
 	std::cout << TURQUOISE2 << "Testing attack function : " << RESET << std::endl;
 	std::cout << alicia << std::endl;
-	while (alicia.getEnergyPoints() > 0)
-		alicia.attack("MoulesFrites");
-	alicia.attack("MoulesFrites");
-	std::cout << alicia << std::endl;
-	alicia.beRepaired(100);
-	std::cout << "------------------------------------------------------" << std::endl;
-	std::cout << TURQUOISE2 << "Testing parents special functions : " << RESET << std::endl;
-	DiamondTrap diam("Diam");
-	std::cout << diam << std::endl;
-	diam.guardGate();
-	diam.highFivesGuys();
+	// while (alicia.getEnergyPoints() > 0)
+	// 	alicia.attack("MoulesFrites");
+	// alicia.attack("MoulesFrites");
+	// std::cout << alicia << std::endl;
+	// alicia.beRepaired(100);
+	// std::cout << "------------------------------------------------------" << std::endl;
+	// std::cout << TURQUOISE2 << "Testing parents special functions : " << RESET << std::endl;
+	// DiamondTrap diam("Diam");
+	// std::cout << diam << std::endl;
+	// diam.guardGate();
+	// diam.highFivesGuys();
 	return 0;
 }

@@ -61,11 +61,6 @@ void 		DiamondTrap::attack(std::string const& target)
 	ScavTrap::attack(target);
 }
 
-std::string		DiamondTrap::getName() const
-{
-	return name_;
-}
-
 void	DiamondTrap::printAttributes(std::ostream& o) const
 {
 	o << STEELBLUE1
@@ -86,4 +81,11 @@ void	DiamondTrap::printAttributes(std::ostream& o) const
 		<< " Attack damage = "
 		<< attackDamage_
 		<< std::endl;
+}
+
+// - GETTERS  -----------------------------------------------------------------------------
+
+std::string		DiamondTrap::getName() const
+{
+	return name_;
 }

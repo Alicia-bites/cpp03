@@ -41,10 +41,11 @@ int	main()
 
 	b.guardGate();
 	b.guardGate();
-	while (b.getEnergyPoints() > 0)
-		b.attack("Rory");
-	b.attack("Rory");
-	b.beRepaired(3);
-	b.guardGate();
+
+	// while (b.getEnergyPoints() > 0)
+	// 	b.attack("Rory");
+	// b.attack("Rory");
+	// b.beRepaired(3);
+	// b.guardGate();
 	return 0;
 }

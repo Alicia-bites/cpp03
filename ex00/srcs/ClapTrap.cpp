@@ -11,22 +11,6 @@ ClapTrap::ClapTrap()
 }
 
 // constructor
-ClapTrap::ClapTrap(std::string name, unsigned int hitPoints, unsigned int energyPoints, unsigned int attackDamage)
-: hitPoints_(hitPoints)
-, energyPoints_(energyPoints)
-, attackDamage_(attackDamage)
-{
-	std::cout << SKYBLUE1 << "second constructor called" << RESET << std::endl;
-	if (name == "")
-	{
-		std::cerr << "Name can't be an empty string. I'll choose the name... Benny." << std::endl;
-		name_ = "Benny";
-	}
-	else
-		name_ = name;
-}
-
-// other constructor
 ClapTrap::ClapTrap(std::string name)
 : hitPoints_(10)
 , energyPoints_(10)
