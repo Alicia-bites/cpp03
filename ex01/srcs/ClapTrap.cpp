@@ -55,6 +55,8 @@ ClapTrap::~ClapTrap()
 	std::cout << SKYBLUE1 << "destructor called" << RESET << std::endl;
 }
 
+// OPERATORS OVERLOAD -------------------------------------------------------
+
 // copy assignement operator
 ClapTrap &ClapTrap::operator=(const ClapTrap& rhs)
 {
