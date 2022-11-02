@@ -7,17 +7,17 @@ int	main()
 	ClapTrap	a;
 	std::cout << a << std::endl;
 	std::cout << std::endl;
-
+	std::cout << "------------------------------------------------------" << std::endl;
 	ScavTrap	b("Alicia");
 	std::cout << b << std::endl;
 	std::cout << std::endl;
-
+	std::cout << "------------------------------------------------------" << std::endl;
 	FragTrap	c;
 	std::cout << c << std::endl;
-
+	std::cout << "------------------------------------------------------" << std::endl;
 	FragTrap	d("Rory");
 	std::cout << d << std::endl;
-
+	std::cout << "------------------------------------------------------" << std::endl;
 	d.highFivesGuys();
 	d.attack("Ernest");
 	while (d.getEnergyPoints() > 0)

@@ -3,7 +3,7 @@
 
 #include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap
+class ScavTrap : public virtual ClapTrap
 {
 	private :
 		int	gateKeepin_;
@@ -18,6 +18,8 @@ class ScavTrap : public ClapTrap
 		void	guardGate();
 		int		getGate() const;
 		void	attack(const std::string& target);
+		void	printAttributes(std::ostream& o) const;
+
 };
 
 std::ostream&	operator<<(std::ostream& o, ScavTrap const& rhs);

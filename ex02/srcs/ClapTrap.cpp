@@ -23,7 +23,7 @@ ClapTrap::ClapTrap(std::string name, unsigned int hitPoints, unsigned int energy
 		name_ = "Benny";
 	}
 	else
-		name = name_;
+		name_ = name;
 }
 
 // other constructor
@@ -32,14 +32,14 @@ ClapTrap::ClapTrap(std::string name)
 , energyPoints_(10)
 , attackDamage_(0)
 {
-	std::cout << SKYBLUE1 << "second constructor called" << RESET << std::endl;
+	std::cout << SKYBLUE1 << "constructor called" << RESET << std::endl;
 	if (name == "")
 	{
 		std::cerr << "Name can't be an empty string. I'll choose the name... Benny." << std::endl;
 		name_ = "Benny";
 	}
 	else
-		name = name_;
+		name_ = name;
 }
 
 // copy constructor
@@ -80,7 +80,7 @@ std::ostream &operator<<(std::ostream& o, ClapTrap& rhs)
 void	ClapTrap::printAttributes(std::ostream& o) const
 {
 	o << STEELBLUE1
-		<< "Printing operator overload called ---->"
+		<< "ClapTrap printing operator overload called ---->"
 		<< RESET
 		<< std::endl
 		<< " Name = " << name_
@@ -106,6 +106,7 @@ void	ClapTrap::attack(const std::string& target)
 		std::cout << SLATEBLUE1
 			<< "SUCCESS!"
 			<< std::endl
+			<< "ClapTrap "
 			<< name_ 
 			<< " attacks " 
 			<< target 
@@ -150,7 +151,6 @@ void	ClapTrap::beRepaired(unsigned int amount)
 		std::cout << SLATEBLUE3
 			<< "SUCCESS!"
 			<< std::endl
-			<< "ClapTrap "
 			<< name_
 			<< " regain "
 			<< DEEPPINK1

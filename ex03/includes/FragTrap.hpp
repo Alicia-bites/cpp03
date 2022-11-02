@@ -16,9 +16,11 @@ class FragTrap : public virtual ClapTrap
 		FragTrap(std::string name);
 		FragTrap(const FragTrap& ori);
 		~FragTrap();
+		
 		FragTrap& operator=(const FragTrap& rhs);
 
-		void highFivesGuys(void);
+		void	printAttributes(std::ostream& o) const;
+		void 	highFivesGuys(void);
 };
 
 std::ostream&	operator<<(std::ostream& o, FragTrap const& rhs);

@@ -9,7 +9,7 @@
 class DiamondTrap : public FragTrap, public ScavTrap
 {
 	private:
-		std::string		_name;
+		std::string		name_;
 
 	public:
 		DiamondTrap();
@@ -18,9 +18,10 @@ class DiamondTrap : public FragTrap, public ScavTrap
 		~DiamondTrap();
 		DiamondTrap&	operator=(DiamondTrap const&);
 
+		std::string		getName() const;
 		void 			attack(std::string const& target);
 		void			whoAmI() const;
-
+		void			printAttributes(std::ostream& o) const;
 };
 
 std::ostream&	operator<<(std::ostream& o, DiamondTrap const& rhs);

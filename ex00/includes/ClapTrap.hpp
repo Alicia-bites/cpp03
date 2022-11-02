@@ -3,6 +3,7 @@
 
 #include <iostream>
 
+
 # define SKYBLUE1 "\033[38;5;117m"
 # define SKYBLUE2 "\033[38;5;111m"
 # define SKYBLUE3 "\033[38;5;74m"
@@ -21,6 +22,9 @@
 # define STEELBLUE4 "\033[38;5;68m"
 # define ORANGERED1 "\033[38;5;202m"
 # define DEEPPINK1 "\033[38;5;198m"
+# define DARKOLIVEGREEN3 "\033[38;5;155m"
+# define INDIANRED1 "\033[38;5;131m"
+# define TURQUOISE2 "\033[38;5;45m"
 # define RESET "\033[0m"
 
 # define NO_ENERGY -42
@@ -28,7 +32,7 @@
 
 class ClapTrap
 {
-	private :
+	protected :
 		std::string		name_;
 		unsigned int	hitPoints_;
 		unsigned int	energyPoints_;
@@ -36,6 +40,7 @@ class ClapTrap
 	public:
 		ClapTrap();
 		ClapTrap(std::string name);
+		ClapTrap(std::string name, unsigned int hitPoints_, unsigned int energyPoints_, unsigned int attackDamage_);
 		ClapTrap(const ClapTrap& ori);
 		~ClapTrap();
 
@@ -47,11 +52,12 @@ class ClapTrap
 		
 		void			setName(std::string& name);
 
-		std::string		&getName(); 
-		unsigned int	getHitPoints() const; 
-		unsigned int	getEnergyPoints() const; 
-		unsigned int	getAttackDamage() const; 
+		const std::string		&getName() const; 
+		unsigned int			getHitPoints() const; 
+		unsigned int			getEnergyPoints() const; 
+		unsigned int			getAttackDamage() const; 
 
+		void			printAttributes(std::ostream& o) const;
 
 };
 

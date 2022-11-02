@@ -23,8 +23,7 @@ ClapTrap::ClapTrap(std::string name, unsigned int hitPoints, unsigned int energy
 		name_ = "Benny";
 	}
 	else
-		name = name_;
-	std::cout << "YOOOOO" << name_ << std::endl;
+		name_ = name;
 }
 
 // other constructor
@@ -40,7 +39,7 @@ ClapTrap::ClapTrap(std::string name)
 		name_ = "Benny";
 	}
 	else
-		name = name_;
+		name_ = name;
 }
 
 // copy constructor
@@ -81,7 +80,7 @@ std::ostream &operator<<(std::ostream& o, ClapTrap& rhs)
 void	ClapTrap::printAttributes(std::ostream& o) const
 {
 	o << STEELBLUE1
-		<< "Printing operator overload called ---->"
+		<< "ClapTrap printing operator overload called ---->"
 		<< RESET
 		<< std::endl
 		<< " Name = " << name_
@@ -107,6 +106,7 @@ void	ClapTrap::attack(const std::string& target)
 		std::cout << SLATEBLUE1
 			<< "SUCCESS!"
 			<< std::endl
+			<< "ClapTrap "
 			<< name_ 
 			<< " attacks " 
 			<< target 
@@ -151,7 +151,6 @@ void	ClapTrap::beRepaired(unsigned int amount)
 		std::cout << SLATEBLUE3
 			<< "SUCCESS!"
 			<< std::endl
-			<< "ClapTrap "
 			<< name_
 			<< " regain "
 			<< DEEPPINK1

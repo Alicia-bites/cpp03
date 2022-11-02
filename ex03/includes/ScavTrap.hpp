@@ -18,6 +18,8 @@ class ScavTrap : public virtual ClapTrap
 		void	guardGate();
 		int		getGate() const;
 		void	attack(const std::string& target);
+		void	printAttributes(std::ostream& o) const;
+
 };
 
 std::ostream&	operator<<(std::ostream& o, ScavTrap const& rhs);

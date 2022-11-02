@@ -4,11 +4,6 @@
 ScavTrap::ScavTrap()
 : ClapTrap("unamed", 100, 50, 20)
 {
-	this->name_ = "unamed";
-	this->hitPoints_ = 100;
-	this->attackDamage_ = 50;
-	this->energyPoints_ = 20;
-	this->gateKeepin_ = 0;
 	std::cout << SPRINGGREEN2 << "calling ScavTrap constructor" << RESET << std::endl;
 }
 
@@ -16,11 +11,6 @@ ScavTrap::ScavTrap()
 ScavTrap::ScavTrap(std::string name)
 : ClapTrap(name, 100, 50, 20)
 {
-	this->name_ = name;
-	this->hitPoints_ = 100;
-	this->energyPoints_ = 50;
-	this->attackDamage_ = 20;
-	this->gateKeepin_ = 0;
 	std::cout << SPRINGGREEN2 << "calling ScavTrap constructor" << RESET << std::endl;
 }
 
@@ -54,7 +44,6 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& rhs)
 std::ostream&	operator<<(std::ostream& o, ScavTrap const& rhs)
 {
 	rhs.printAttributes(o);
-	o << " Is " << rhs.getName() << " in gate keeper mode? 1 for yes, 0 for no --> " << rhs.getGate();
 	return (o);
 }
 
@@ -108,4 +97,27 @@ void	ScavTrap::attack(const std::string& target)
 	}
 	else
 		std::cout << ORANGERED1 << "FAILURE! Not enough energy points!" << RESET << std::endl;
+}
+
+void	ScavTrap::printAttributes(std::ostream& o) const
+{
+	o << STEELBLUE1
+		<< "ScavTrap printing operator overload called ---->"
+		<< RESET
+		<< std::endl
+		<< " Name = " << name_
+		<< std::endl
+		<< " Hit points or health = "
+		<< hitPoints_
+		<< std::endl
+		<< " Energy points = "
+		<< energyPoints_
+		<< std::endl
+		<< " Attack damage = "
+		<< attackDamage_
+		<< std::endl
+		<< " Is " << name_
+		<< " in gate keeper mode? 1 for yes, 0 for no --> "
+		<< gateKeepin_
+		<< std::endl;
 }

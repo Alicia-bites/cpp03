@@ -11,33 +11,48 @@ ClapTrap::ClapTrap()
 }
 
 // constructor
-ClapTrap::ClapTrap(std::string name)
-: hitPoints_(10)
-, energyPoints_(10)
-, attackDamage_(0)
+ClapTrap::ClapTrap(std::string name, unsigned int hitPoints, unsigned int energyPoints, unsigned int attackDamage)
+: hitPoints_(hitPoints)
+, energyPoints_(energyPoints)
+, attackDamage_(attackDamage)
 {
-	std::cout << SKYBLUE2 << "constructor called" << RESET << std::endl;
+	std::cout << SKYBLUE1 << "second constructor called" << RESET << std::endl;
 	if (name == "")
 	{
 		std::cerr << "Name can't be an empty string. I'll choose the name... Benny." << std::endl;
 		name_ = "Benny";
 	}
 	else
-		name = name_;
+		name_ = name;
+}
+
+// other constructor
+ClapTrap::ClapTrap(std::string name)
+: hitPoints_(10)
+, energyPoints_(10)
+, attackDamage_(0)
+{
+	std::cout << SKYBLUE1 << "constructor called" << RESET << std::endl;
+	if (name == "")
+	{
+		std::cerr << "Name can't be an empty string. I'll choose the name... Benny." << std::endl;
+		name_ = "Benny";
+	}
+	else
+		name_ = name;
 }
 
 // copy constructor
 ClapTrap::ClapTrap(const ClapTrap& ori)
-: name_(ori.name_)
 {
-	std::cout << SKYBLUE3 << "copy constructor called" << RESET << std::endl;
-
+	std::cout << SKYBLUE1 << "copy constructor called" << RESET << std::endl;
+	*this = ori;
 }
 
 // destructor
 ClapTrap::~ClapTrap()
 {
-	std::cout << SPRINGGREEN6 << "destructor called" << RESET << std::endl;
+	std::cout << SKYBLUE1 << "destructor called" << RESET << std::endl;
 }
 
 // copy assignement operator
@@ -56,25 +71,32 @@ ClapTrap &ClapTrap::operator=(const ClapTrap& rhs)
 // << overload
 std::ostream &operator<<(std::ostream& o, ClapTrap& rhs)
 {
-	o << STEELBLUE1
-		<< "Printing operator overload called ---->"
-		<< RESET
-		<< std::endl
-		<< " Name = " << rhs.getName()
-		<< std::endl
-		<< " Hit points or health = "
-		<< rhs.getHitPoints()
-		<< std::endl
-		<< " Energy points = "
-		<< rhs.getEnergyPoints()
-		<< std::endl
-		<< " Attack damage = "
-		<< rhs.getAttackDamage()
-		<< std::endl;
+	rhs.printAttributes(o);
 	return o;
 }
 
-// ACTION FUNCTIONS -------------------------------------------------------------------------
+// MEMBER FUNCTIONS -------------------------------------------------------
+
+void	ClapTrap::printAttributes(std::ostream& o) const
+{
+	o << STEELBLUE1
+		<< "ClapTrap printing operator overload called ---->"
+		<< RESET
+		<< std::endl
+		<< " Name = " << name_
+		<< std::endl
+		<< " Hit points or health = "
+		<< hitPoints_
+		<< std::endl
+		<< " Energy points = "
+		<< energyPoints_
+		<< std::endl
+		<< " Attack damage = "
+		<< attackDamage_
+		<< std::endl;
+}
+
+// - ACTION FUNCTIONS -----------------------------------------------------
 
 void	ClapTrap::attack(const std::string& target)
 {
@@ -146,8 +168,10 @@ void	ClapTrap::beRepaired(unsigned int amount)
 		std::cout << ORANGERED1 << "FAILURE! Not enough energy points!" << RESET << std::endl;
 }
 
+
+
 // - GETTERS -------------------------------------------------
-std::string	&ClapTrap::getName()  
+const std::string	&ClapTrap::getName() const
 {
 	return name_;
 }

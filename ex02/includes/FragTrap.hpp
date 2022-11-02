@@ -7,7 +7,7 @@
 # define SANDYBROWN "\033[38;5;215m"
 # define YELLOW1 "\033[38;5;226m"
 
-class FragTrap : public ClapTrap
+class FragTrap : public virtual ClapTrap
 {
 	private :
 
@@ -15,10 +15,12 @@ class FragTrap : public ClapTrap
 		FragTrap();
 		FragTrap(std::string name);
 		FragTrap(const FragTrap& ori);
-		FragTrap& operator=(const FragTrap& rhs);
 		~FragTrap();
+		
+		FragTrap& operator=(const FragTrap& rhs);
 
-		void highFivesGuys(void);
+		void	printAttributes(std::ostream& o) const;
+		void 	highFivesGuys(void);
 };
 
 std::ostream&	operator<<(std::ostream& o, FragTrap const& rhs);
